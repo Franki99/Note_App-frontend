@@ -20,7 +20,7 @@ const NoteForm = () => {
 
         const note = {title, notes}
 
-        const response = await fetch('/api/notes', {
+        const response = await fetch('https://noteapp-backend-production-fcb1.up.railway.app/api/notes', {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {
