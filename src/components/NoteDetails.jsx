@@ -10,12 +10,16 @@ const NoteDetails = ({ note }) => {
     if (!user) {
       return;
     }
-    const response = await fetch("/api/notes/" + note._id, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
+    const response = await fetch(
+      "https://noteapp-backend-production-fcb1.up.railway.app/api/notes/" +
+        note._id,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
     const json = await response.json();
 
     if (response.ok) {
